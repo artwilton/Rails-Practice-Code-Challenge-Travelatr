@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+    before_action :find_post, only: [:show, :edit, :update, :destroy]
+
     def index
         @posts = Post.all
     end
@@ -26,6 +28,10 @@ class PostsController < ApplicationController
 
     def find_post
         @post = Post.find(params[:id])
+    end
+
+    def post_params
+        params.require(:post).permit(:name, :country)
     end
 
 end
