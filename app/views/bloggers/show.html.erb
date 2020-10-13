@@ -1,3 +1,4 @@
 <h2><%= @blogger.name %></h2>
 
-<h3>Total Likes:</h3>
+<h3>Total Likes: <%=@blogger.posts.sum { |post| post.likes } %></h3>
+   
