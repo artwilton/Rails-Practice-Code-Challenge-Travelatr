@@ -2,3 +2,5 @@
 
 <h3>Total Likes: <%=@blogger.posts.sum { |post| post.likes } %></h3>
    
+<h3>Featured Post</h3>
+<%= link_to @blogger.featured_post.title, post_path(@blogger.featured_post) %>

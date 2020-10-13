@@ -4,4 +4,9 @@ class Blogger < ApplicationRecord
     validates :age, numericality: {only_integer: true, greater_than: 0}
     validates :name, uniqueness: true
     validates :bio, length: {minimum: 30}
+
+    def featured_post
+        self.posts.max_by { |posts| posts.likes }
+    end
+
 end
