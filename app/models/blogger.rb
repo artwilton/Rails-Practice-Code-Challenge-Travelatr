@@ -9,4 +9,5 @@ class Blogger < ApplicationRecord
         self.posts.max_by { |posts| posts.likes }
     end
 
+    
 end
