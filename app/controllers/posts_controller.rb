@@ -35,7 +35,8 @@ class PostsController < ApplicationController
     end
 
     def post_params
-        params.require(:post).permit(:name, :country)
+        #args
+        params.require(:post).permit(:title, :content, :blogger_id, :destination_id)
     end
 
 end
